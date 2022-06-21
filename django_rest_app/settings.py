@@ -89,14 +89,26 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'django_rest_db',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'django_rest_db',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': os.environ.get('DBENGINE', ''),
+        'NAME': os.environ.get('DBNAME', ''),
+        'USER': os.environ.get('DBUSER', ''),
+        'PASSWORD': os.environ.get('DBPASSWORD', ''),
+        'HOST': os.environ.get('DBHOST', ''),
+        'PORT': os.environ.get('DBPORT', ''),
     }
 }
 
