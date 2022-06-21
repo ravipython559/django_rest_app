@@ -38,7 +38,7 @@ jobs:
         DBUSER: root
         DBPASSWORD: root
         DBHOST: 127.0.0.1
-        DBPORT: $
+        DBPORT: 3306
     - name: Run Tests
       run: |
         python3 manage.py test
@@ -48,6 +48,6 @@ jobs:
         DBUSER: root
         DBPASSWORD: root
         DBHOST: 127.0.0.1
-        DBPORT: $
+        DBPORT: 3306
 
 
